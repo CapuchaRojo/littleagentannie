@@ -73,7 +73,7 @@ log_data = [
 ]
 
 # Initialize and run the agent
-granite_api_key = "YOUR_IBM_GRANITE_API_KEY"
+granite_api_key = "f_MxUN_vG8e0nKIx4fR8Ug2qyQ89mwv4Bb9362KKLVjC"
 incident_agent = GoalBasedIncidentAgent(knowledge_base, granite_api_key)
 
 incident_agent.parse_logs(log_data)
