@@ -5,7 +5,7 @@ from collections import defaultdict
 from dotenv import load_dotenv
 from ibm_watson_machine_learning.foundation_models import Model  # Correct IBM Granite API import
 from functools import wraps
-x-api-key: your_api_key_here
+x-api-key: f_MxUN_vG8e0nKIx4fR8Ug2qyQ89mwv4Bb9362KKLVjC
 
 
 def require_api_key(f):
@@ -34,11 +34,11 @@ def protected_route():
 
 # Load environment variables
 load_dotenv()
-granite_api_key = os.getenv("API_KEY")
+granite_api_key = os.getenv("f_MxUN_vG8e0nKIx4fR8Ug2qyQ89mwv4Bb9362KKLVjC")
 
 # Set up IBM Watson credentials
 credentials = {
-    "apikey": granite_api_key,
+    "apikey": f_MxUN_vG8e0nKIx4fR8Ug2qyQ89mwv4Bb9362KKLVjC,
     "url": "https://us-south.ml.cloud.ibm.com"  # Update if using a different region
 }
 
