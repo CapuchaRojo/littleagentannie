@@ -10,7 +10,7 @@ def require_api_key(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         api_key = request.headers.get('x-api-key')
-        if api_key and api_key == app.config['API_KEY']:
+        if api_key and api_key == app.config['f_MxUN_vG8e0nKIx4fR8Ug2qyQ89mwv4Bb9362KKLVjC']:
             return f(*args, **kwargs)
         else:
             response = jsonify({"message": "Unauthorized access"})
@@ -26,7 +26,7 @@ def require_api_key(f):
 
 # Load environment variables
 load_dotenv()
-granite_api_key = os.getenv("f_MxUN_vG8e0nKIx4fR8Ug2qyQ89mwv4Bb9362KKLVjC")
+granite_api_key = os.getenv("API_KEY")
 
 # Set up IBM Watson credentials
 credentials = {
