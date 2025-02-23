@@ -11,7 +11,7 @@ app.config['API_KEY'] = os.getenv('API_KEY')  # Ensure 'API_KEY' is set in your 
 
 # Load environment variables
 load_dotenv()
-granite_api_key = os.getenv("IBM_GRANITE_API_KEY")
+granite_api_key = os.getenv("f_MxUN_vG8e0nKIx4fR8Ug2qyQ89mwv4Bb9362KKLVjC")
 
 # Set up IBM Watson credentials
 credentials = {
