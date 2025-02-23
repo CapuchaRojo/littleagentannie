@@ -1,8 +1,13 @@
 import json
 import os
+from flask import Flask, request, jsonify
 from collections import defaultdict
 from dotenv import load_dotenv
 from ibm_watson_machine_learning.foundation_models import Model  # Correct IBM Granite API import
+
+app = Flask(__name__)
+app.config['API_KEY'] = os.getenv('API_KEY')  # Ensure 'API_KEY' is set in your environment
+
 
 # Load environment variables
 load_dotenv()
