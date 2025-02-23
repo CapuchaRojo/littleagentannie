@@ -5,6 +5,8 @@ from collections import defaultdict
 from dotenv import load_dotenv
 from ibm_watson_machine_learning.foundation_models import Model  # Correct IBM Granite API import
 from functools import wraps
+x-api-key: your_api_key_here
+
 
 def require_api_key(f):
     @wraps(f)
@@ -17,6 +19,12 @@ def require_api_key(f):
             response.status_code = 401
             return response
     return decorated_function
+
+@app.route('/protected')
+@require_api_key
+def protected_route():
+    return jsonify({"message": "Access granted to the protected route"})
+
 
   app = Flask(__name__)
   app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
