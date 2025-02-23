@@ -4,7 +4,19 @@ from flask import Flask, request, jsonify
 from collections import defaultdict
 from dotenv import load_dotenv
 from ibm_watson_machine_learning.foundation_models import Model  # Correct IBM Granite API import
+from functools import wraps
 
+def require_api_key(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        api_key = request.headers.get('x-api-key')
+        if api_key and api_key == app.config['API_KEY']:
+            return f(*args, **kwargs)
+        else:
+            response = jsonify({"message": "Unauthorized access"})
+            response.status_code = 401
+            return response
+    return decorated_function
 
   app = Flask(__name__)
   app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
